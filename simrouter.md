@@ -122,6 +122,7 @@ ping 192.168.10.1
   <img width="352" height="143" alt="image" src="https://github.com/user-attachments/assets/cbd61d3d-66cb-472d-9e57-4e571edd7393" />
 
   ```bash
+  sudo chmod 600 /etc/netplan/50-cloud-init.yaml
   sudo netplan apply
   sudo reboot
   ```
@@ -142,5 +143,23 @@ ping 8.8.8.8
 ping 192.168.159.128
 ping 192.168.10.10
 ping 192.168.10.1
+sudo vi /etc/netplan/01-netcfg.yaml
+```
+
+<img width="266" height="149" alt="image" src="https://github.com/user-attachments/assets/ee0cfdfa-ed3b-4e15-b7b6-054f8b8ae652" />
+
+```bash
+sudo chmod 600 /etc/netplan/01-netcfg.yaml
+Sudo netplan try
+Sudo netplan apply
+reboot
+```
+60. Test the pings work
+
+61. Repeat steps 57 to 61 to set up the remaining 3 servers (database vm, file network vm, and mail vm). The ip address for each is 192.168.10.11, 192.168.10.12, and 192.168.10.13. They all use the gateway 192.168.10.1.
+
+##You can only ssh into the service vms through the mgmt server as the linux@srv2 user. You have to ssh into the mgmt server from the windows command prompt using "ssh myubuntu"
+
+
 
 
