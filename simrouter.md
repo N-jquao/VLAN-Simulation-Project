@@ -1,4 +1,4 @@
-#The following shows my process of using a VMnet (NAT) for the internet connection for my management server, and then using it as a router for 4 simulated VLANS, which are simulated by LAN segments.
+##The following shows my process of using a VMnet (NAT) for the internet connection for my management server, and then using it as a router for 4 simulated VLANS, which are simulated by LAN segments.
 
 1. Create 5 vms on VMware Workstation with Linux Ubuntu LTS OS on Windows 11 and name them respectively as stated above
 2. Open Virtual Network Editor on Windows - ensure all vms have been powered off before
