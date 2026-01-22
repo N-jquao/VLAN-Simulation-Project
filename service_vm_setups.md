@@ -14,7 +14,7 @@ sudo apt update && sudo apt upgrade -y
  sudo mysql_secure_installation
  sudo vi /etc/mysql/mariadb.conf.d/50-server.cnf
  ```
-    Change bind-address from 127.0.0.1 to 0.0.0.0 (to allow all to connect) or to the web server's ip address
+ Change bind-address from 127.0.0.1 to 0.0.0.0 (to allow all to connect) or to the web server's ip address
 
  ```bash
  sudo mysql -u root -p
