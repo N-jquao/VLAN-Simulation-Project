@@ -58,7 +58,7 @@ sudo mkdir /mnt/network_files
 sudo mount -t cifs //<ip address of file server>/linux_share /mnt/network_files -o guest
 sudo vi /etc/fstab
 ```
-   Add the following to /etc/fstab on web server
+   - Add the following to /etc/fstab on web server
    //<ip address of file server>/linux_share  /mnt/network_files  cifs  guest,uid=1000,gid=1000,iocharset=utf8  0  0
 
 ```bash
@@ -74,17 +74,17 @@ sudo apt install mariadb-client -y
 mysql -u webuser -h <ip address of web vm” -p
 sudo apt install nginx
 ```
-   App Logic: Install PHP or Python/Node.js depending on your stack.
-   Connectivity: In your application's configuration file (like wp-config.php or .env), point the database host to the 
-   Database Server's Private IP.
-   SSL: Use Certbot (sudo apt install certbot python3-certbot-nginx) to get free Let's Encrypt certificates.
+   - App Logic: Install PHP or Python/Node.js depending on your stack.
+   - Connectivity: In your application's configuration file (like wp-config.php or .env), point the database host to the 
+     Database Server's Private IP.
+   - SSL: Use Certbot (sudo apt install certbot python3-certbot-nginx) to get free Let's Encrypt certificates.
 
 10. Set up the mail server
-    The most complex part. You will need a Fully Qualified Domain Name (FQDN).
-    MTA (Postfix): Handles sending/routing. Set it as an "Internet Site."
-    MDA (Dovecot): Handles delivery to mailboxes and IMAP/POP3 access.
-    DNS is Critical: You must set up MX Records pointing to this server’s public IP, along with SPF, DKIM, and DMARC
-    records to prevent your emails from being marked as spam.
+    - The most complex part. You will need a Fully Qualified Domain Name (FQDN).
+    - MTA (Postfix): Handles sending/routing. Set it as an "Internet Site."
+    - MDA (Dovecot): Handles delivery to mailboxes and IMAP/POP3 access.
+    - DNS is Critical: You must set up MX Records pointing to this server’s public IP, along with SPF, DKIM, and DMARC
+      records to prevent your emails from being marked as spam.
 
 11. Final integration and firewall
     On each server, configure the firewall (UFW) to only allow what is necessary
