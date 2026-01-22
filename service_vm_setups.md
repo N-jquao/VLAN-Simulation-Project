@@ -71,7 +71,7 @@ df -h | grep linux_share
 ```bash
 sudo apt update
 sudo apt install mariadb-client -y
-mysql -u webuser -h <ip address of web vm” -p
+mysql -u webuser -h <ip address of web vm> -p
 sudo apt install nginx
 ```
    - App Logic: Install PHP or Python/Node.js depending on your stack.
