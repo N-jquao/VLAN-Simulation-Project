@@ -103,6 +103,4 @@ curl http://testsite.local
 
 # From your host machine's browser go to
 http://<vm ip address>
-
-
-
+```
