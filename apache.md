@@ -65,4 +65,44 @@ sudo chmod -R 755 /var/www/testsite.local
 sudo vi /etc/apache2/sites-available/testsite.local.conf
 # Paste this configuration
 <VirtualHost *:80>
+    ServerAdmin admin@testsite.local
+    ServerName testsite.local
+    ServerAlias www.testsite.local
+    DocumentRoot /var/www/testsite.local
+
+    <Directory /var/www/testsite.local>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/testsite.local-error.log
+    CustomLog ${APACHE_LOG_DIR}/testsite.local-access.log combined
+</Virtualization>
+# Save and exit
+# This tells Apache how to serve this specific website
+
+# Enable the new site
+sudo a2ensite testsite.local.conf
+
+# Test Apache config for syntax errors
+sudo apache2ctl configtest # Expected output: "Syntax OK"
+
+# Reload Apache to apply changes
+sudo systemctl reload apache2
+
+# For local testing, add an entry to your hosts file
+sudo vi /etc/hosts
+# Add this line
+127.0.0.1 testsite.local
+# Now test
+curl http://testsite.local
+# Should see your html
+
+## Have completed Basic server setup, firewall config, Apache installation and co fig, and first virtual host creation
+
+# From your host machine's browser go to
+http://<vm ip address>
+
+
 
